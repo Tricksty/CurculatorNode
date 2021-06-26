@@ -1,0 +1,11 @@
+.names{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+.name{
+    margin-left: 50px;
+    margin-right: 50px;
+}

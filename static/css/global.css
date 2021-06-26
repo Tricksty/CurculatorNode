@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+    font-family: 'pixel';
+    src: url(../fonts/pixel.ttf);
+}
+
+body {
+    text-align: center;
+    background-color: #b8dbff;
+    color: #5c6e80;
+    font-family: 'pixel';
+}
