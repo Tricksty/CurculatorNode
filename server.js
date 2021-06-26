@@ -3,12 +3,17 @@ const express = require('express');
 const server = express();
 const PORT = 3000;
 const path = require('path')
-
-
-const Adminrtr = require('./router/Admin');
-server.use('/admin', Adminrtr);
+const cors = require('cors');
 
 server.use(express.static('static'));
+server.use(express.json());
+server.use(express.urlencoded({extended: true}));
+server.use(cors({
+    origin: '*',
+}));
+
+const ApiRtr = require('./router/Api');
+server.use('/api', ApiRtr);
 
 server.use('/', async (req, res, next) => {
     let headHTML = await fs.readFile(path.join(__dirname, 'templates', 'head.html'));
@@ -27,5 +32,5 @@ server.get('/head', async function (req, res) {
 })
 
 server.listen(PORT, function() {
-    console.log('aaaaaaaaaaaaaaa');
+    console.log('Nagatoro is ready on: http://localhost:3000');
 })

@@ -1,3 +1,5 @@
+console.log('index.js start');
+
 let button = document.getElementById('submit');
 
 button.addEventListener('click', async (e) => {
@@ -9,14 +11,12 @@ button.addEventListener('click', async (e) => {
     let inflationRate = document.getElementById('inflation_rate');
     let amountAtEnd = document.getElementById('amount_at_end');
 
-    const res = await request({url: 'credit', body: {
+    const res = await request({url: 'api/calculate', body: {
         amount_at_start: amountAtStart.value,
         deposit_percent: depositPercent.value,
         ages: ages.value,
         inflation_rate: inflationRate.value,
         amount_at_end: amountAtEnd.value,
-    }, headers:{
-        'X-CSRFToken': csrf_token,
     }});
 
     console.log(res);

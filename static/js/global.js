@@ -1,3 +1,5 @@
+console.log('global.js started');
+
 async function request({url, body, method='POST', headers={}}) {
     const res = await fetch(url, {
         method: method,
